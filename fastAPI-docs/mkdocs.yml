@@ -1,1 +1,34 @@
-site_name: My Docs
+site_name: "FastAPI Documentação"
+theme:
+  language: pt-BR
+  name: "material"
+  palette:
+    - scheme: default
+      primary: teal
+      toggle:
+        icon: material/weather-night
+        name: Modo noturno
+    - scheme: slate
+      primary: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  custom_dir: docs
+  features:
+    - content.code.copy # Habilitar o botão de cópia para blocos de código
+
+markdown_extensions:
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - pymdownx.tilde
+  - pymdownx.mark
+  - pymdownx.highlight:
+      linenums: false
+  - pymdownx.superfences
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Ambiente: ambiente.md
