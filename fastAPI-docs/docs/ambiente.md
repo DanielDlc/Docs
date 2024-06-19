@@ -12,31 +12,31 @@ mkdir fast_zero
 
 Para instalar o `pyenv`, siga as instruções no [site oficial](https://pypi.org/project/pyenv-win/).
 
-```powershell
+```powershell title="$ Execução no terminal!"
 Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
 ```
 
 ### 2.2 Instalar `pipx`
 
-```bash
+```powershell title="$ Execução no terminal!"
 pip install pipx
 ```
 
 ### 2.3 Instalar `poetry`
 
-```bash
+```powershell title="$ Execução no terminal!"
 pipx install poetry
 ```
 
 Para atualizar o `poetry`, utilize:
 
-```bash
+```powershell title="$ Execução no terminal!"
 pipx upgrade poetry
 ```
 
 ### 2.4 Instalar `ignr` para criar `.gitignore`
 
-```bash
+```powershell title="$ Execução no terminal!"
 pipx install ignr
 ```
 
@@ -44,19 +44,19 @@ pipx install ignr
 
 ### 3.1 Criar um novo projeto
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry new fast_zero
 ```
 
 ### 3.2 Instalar dependências do projeto
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry install
 ```
 
 Caso não funcione, utilize:
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry lock
 ```
 
@@ -64,25 +64,25 @@ poetry lock
 
 Para instalar a biblioteca `fastapi`:
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry add fastapi
 ```
 
 Se o comando acima não funcionar, atualize com:
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry update fastapi
 ```
 
 Para instalar a última versão disponível:
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry add fastapi@latest
 ```
 
 ### 3.4 Verificar todas as bibliotecas instaladas
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry show
 ```
 
@@ -90,19 +90,19 @@ poetry show
 
 Antes de executar, ative o ambiente virtual:
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry shell
 ```
 
 Para executar o arquivo principal `app.py`:
 
-```bash
+```powershell title="$ Execução no terminal!"
 uvicorn app:app --reload
 ```
 
 ### 3.6 Exibir diretório criado no Windows 11
 
-```bash
+```powershell title="$ Execução no terminal!"
 tree /f
 ```
 
@@ -112,13 +112,13 @@ tree /f
 
 ### 4.1 Verifique se seu ambiente está ativado, caso precise ativar:
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry shell
 ```
 
 ### 4.2 execute sua aplicação com
 
-```bash
+```powershell title="$ Execução no terminal!"
 fastapi dev fast_zero/app.py
 ```
 
@@ -133,7 +133,7 @@ fastapi dev fast_zero/app.py
 
 Adicione `Ruff` como dependência de desenvolvimento:
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry add --group dev ruff
 ```
 
@@ -143,7 +143,7 @@ Adicione as seguintes configurações no arquivo `pyproject.toml`:
 
 ### 5.3. Configurar limite de linha e excluir migrações
 
-```toml
+```toml title=" ⚙ Arquivo pyproject.toml"
 [tool.ruff]
 line-length = 79
 extend-exclude = ['migrations']
@@ -151,7 +151,7 @@ extend-exclude = ['migrations']
 
 ### 5.4. Selecionar linters
 
-```toml
+```toml title=" ⚙ Arquivo pyproject.toml"
 [tool.ruff.lint]
 preview = true
 select = ['I', 'F', 'E', 'W', 'PL', 'PT']
@@ -159,7 +159,7 @@ select = ['I', 'F', 'E', 'W', 'PL', 'PT']
 
 ### 5.5 Formatador de código
 
-```toml
+```toml title=" ⚙ Arquivo pyproject.toml"
 [tool.ruff.format]
 preview = true
 quote-style = 'single'
@@ -167,19 +167,19 @@ quote-style = 'single'
 
 ### 5.6 Verificar o código
 
-```bash
+```powershell title="$ Execução no terminal!"
 ruff check .
 ```
 
 ### 5.7 Organizar o código
 
-```bash
+```powershell title="$ Execução no terminal!"
 ruff check . --fix
 ```
 
 ### 5.8 Formatar o código
 
-```bash
+```powershell title="$ Execução no terminal!"
 ruff format .
 ```
 
@@ -189,13 +189,13 @@ Quando tudo estiver correto, aparecerá a mensagem: "all checks passed!".
 
 ### 6.1 Instalar `Pytest` (testar código)
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry add --group dev pytest pytest-cov
 ```
 
 ### 6.2 Adicionar no arquivo `toml`
 
-```toml
+```toml title=" ⚙ Arquivo pyproject.toml"
 [tool.pytest.ini_options]
 pythonpath = "."
 addopts = '-p no:warnings'
@@ -203,13 +203,13 @@ addopts = '-p no:warnings'
 
 ### 6.3 Verificar o que está ou não testado especificando o diretório
 
-```bash
+```powershell title="$ Execução no terminal!"
 pytest --cov=fast_zero
 ```
 
 ### 6.4 Gerar arquivo HTML para verificar os testes
 
-```bash
+```powershell title="$ Execução no terminal!"
 coverage html
 ```
 
@@ -219,32 +219,32 @@ coverage html
 
 Adicione essa dependência no `poetry`:
 
-```bash
+```powershell title="$ Execução no terminal!"
 poetry add --group dev taskipy
 ```
 
-### 7.2 Criar task no arquivo `pyproject.toml`
+### 7.2 Criar task no arquivo `pyproject.toml title=" ⚙ Arquivo pyproject.toml"`
 
-```toml
+```toml title=" ⚙ Arquivo pyproject.toml"
 [tool.taskipy.tasks]
 run = 'fastapi dev fast_zero/app.py'
 ```
 
 ### 7.3 Rodar um comando simples para executar o projeto
 
-```bash
+```powershell title="$ Execução no terminal!"
 task run
 ```
 
 Ao invés de:
 
-```bash
+```powershell title="$ Execução no terminal!"
 fastapi dev fast_zero/app.py
 ```
 
 ### 7.4 Editar o arquivo `pyproject.toml` para incluir testes
 
-```toml
+```toml title=" ⚙ Arquivo pyproject.toml"
 [tool.taskipy.tasks]
 run = 'fastapi dev fast_zero/app.py'
 test = 'pytest -s -x --cov=fast_zero -vv'
@@ -254,7 +254,7 @@ test = 'pytest -s -x --cov=fast_zero -vv'
 
 No comando lint abaixo, repare que utilizei dois "&&". Caso esteja no Mac e Linux, pode utilizar ";".
 
-```toml
+```toml title=" ⚙ Arquivo pyproject.toml"
 [tool.taskipy.tasks]
 lint = 'ruff check . && ruff check . --diff'
 format = 'ruff check . --fix && ruff format .'
@@ -264,7 +264,7 @@ format = 'ruff check . --fix && ruff format .'
 
 Vamos editar o arquivo novamente para verificar se está tudo certo.
 
-```toml
+```toml title=" ⚙ Arquivo pyproject.toml"
 pre_test = 'task lint'
 test = 'pytest -s -x --cov=fast_zero -vv'
 post_test = 'coverage html'
@@ -272,7 +272,7 @@ post_test = 'coverage html'
 
 ### 7.8 Arquivo completo `pyproject.toml`
 
-```toml
+```toml title=" ⚙ Arquivo pyproject.toml"
 [tool.taskipy.tasks]
 run = 'fastapi dev fast_zero/app.py'
 pre_test = 'task lint'
@@ -284,7 +284,7 @@ format = 'ruff check . --fix && ruff format .'
 
 ### 7.9 Ver todos os comandos task
 
-```bash
+```powershell title="$ Execução no terminal!"
 task --list
 ```
 
@@ -302,9 +302,3 @@ touch test_app.py
 - Agir (Act)
 - Afirmar (Assert)
 - Teardown
-
-### 9.0 Link para o Curso completo
-
-|               Lindo direto para o material               |                                        Curso FastAPI                                         |
-| :------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
-| [FastAPI do Zero](https://fastapidozero.dunossauro.com/) | [Playlist Youtube](https://www.youtube.com/playlist?list=PLOQgLBuj2-3IuFbt-wJw2p2NiV9WTRzIP) |
