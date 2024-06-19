@@ -802,6 +802,20 @@ termcolor = "*"
 test = ["mkdocs-include-markdown-plugin", "mkdocs-macros-test", "mkdocs-material (>=6.2)"]
 
 [[package]]
+name = "mkdocs-markdownextradata-plugin"
+version = "0.2.5"
+description = "A MkDocs plugin that injects the mkdocs.yml extra variables into the markdown template"
+optional = false
+python-versions = ">=2.7.9,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
+files = [
+    {file = "mkdocs-markdownextradata-plugin-0.2.5.tar.gz", hash = "sha256:9c562e8fe375647d5692d11dfe369a7bdd50302174d35995fce2aeca58036ec6"},
+]
+
+[package.dependencies]
+mkdocs = "*"
+pyyaml = "*"
+
+[[package]]
 name = "mkdocs-material"
 version = "9.5.27"
 description = "Documentation that simply works"
@@ -1511,4 +1525,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "4e3265f020a8ca7386ee46e6b8fcd763d77bc047d7cd790a37142560a32dfe7e"
+content-hash = "df6238b83e279ec83c2cac44878e09ccea77a223fe88d9aa7026427677aad3d5"
