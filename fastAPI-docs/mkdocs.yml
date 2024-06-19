@@ -16,6 +16,9 @@ theme:
   custom_dir: docs
   features:
     - content.code.copy # Habilitar o botão de cópia para blocos de código
+    - navigation.tabs # Habilita a navegação no cabeçalho
+    - navigation.top # Coloca a navegação no topo
+    - toc.integrate # Integra o conteúdo principal, movendo-o para fora da barra lateral
 
 markdown_extensions:
   - pymdownx.tasklist
@@ -32,3 +35,4 @@ plugins:
 nav:
   - Home: index.md
   - Ambiente: ambiente.md
+  - Web: introdução_web.md
