@@ -2,8 +2,8 @@
 
 ## Introdução
 
-Este conteúdo foi criado para ajudar no projeto final do curso FastAPI `fast_zero` Dunossauro.
-Criei essa documentação para registrar todo processo de criação até o deploy.
+Bem-vindo à Documentação da Nossa API FastAPI
+Estamos muito felizes em apresentar nossa API desenvolvida com FastAPI! Esta documentação foi criada para fornecer a você todas as informações necessárias para começar a utilizar nossa API de forma eficiente e eficaz.
 
 ## 💡 Importante
 
