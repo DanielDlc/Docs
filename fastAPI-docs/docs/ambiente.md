@@ -2,7 +2,7 @@
 
 ### 1. Criar diretório 📂
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 mkdir fast_zero
 ```
 
@@ -12,31 +12,31 @@ mkdir fast_zero
 
 Para instalar o `pyenv`, siga as instruções no [site oficial](https://pypi.org/project/pyenv-win/).
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
 ```
 
 ### 2.2 Instalar `pipx`
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 pip install pipx
 ```
 
 ### 2.3 Instalar `poetry`
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 pipx install poetry
 ```
 
 Para atualizar o `poetry`, utilize:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 pipx upgrade poetry
 ```
 
 ### 2.4 Instalar `ignr` para criar `.gitignore`
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 pipx install ignr
 ```
 
@@ -44,19 +44,22 @@ pipx install ignr
 
 ### 3.1 Criar um novo projeto
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry new fast_zero
 ```
 
 ### 3.2 Instalar dependências do projeto
 
-```powershell title="$ Execução no terminal!"
+Entre no diretório do projeto `cd fast_zero`
+
+```powershell title="$ Shell"
+cd fast_zero
 poetry install
 ```
 
 Caso não funcione, utilize:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry lock
 ```
 
@@ -64,25 +67,25 @@ poetry lock
 
 Para instalar a biblioteca `fastapi`:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry add fastapi
 ```
 
-Se o comando acima não funcionar, atualize com:
+Caso deseje atualizar:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry update fastapi
 ```
 
 Para instalar a última versão disponível:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry add fastapi@latest
 ```
 
 ### 3.4 Verificar todas as bibliotecas instaladas
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry show
 ```
 
@@ -90,35 +93,70 @@ poetry show
 
 Antes de executar, ative o ambiente virtual:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry shell
-```
-
-Para executar o arquivo principal `app.py`:
-
-```powershell title="$ Execução no terminal!"
-uvicorn app:app --reload
 ```
 
 ### 3.6 Exibir diretório criado no Windows 11
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 tree /f
 ```
 
-**Observação**: O arquivo `poetry.lock` pode ser adicionado ao GitHub (remova do `.gitignore`).
+Sera exibido uma estrutua assim:
+
+<pre>
+.
+├── fast_zero
+│  └── __init__.py
+├── pyproject.toml
+├── README.md
+└── tests
+   └── __init__.py
+</pre>
+
+### 3.7 Agora vamos criar um arquivo app.py no diretório `fast_zero`
+
+```powershell title="$ Shell"
+touch fast_zero/app.py
+```
+
+Vamos observar um novo arquivo no diretório fast_zero com o nome `app.py`
+
+<pre>
+├── README.md
+├── fast_zero
+│   ├── __init__.py
+│   └── app.py
+├── poetry.lock
+├── pyproject.toml
+└── tests
+    └── __init__.py
+</pre>
+
+### 3.8 Editar o arquivo `app.py`
+
+```py title=" » VScode"
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get('/')
+def read_root():
+    return {'message': 'Olá Mundo!'}
+```
 
 ### 4. Documentação do Swagger 🌐
 
 ### 4.1 Verifique se seu ambiente está ativado, caso precise ativar:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry shell
 ```
 
-### 4.2 execute sua aplicação com
+### 4.2 execute sua primeira aplicação com:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 fastapi dev fast_zero/app.py
 ```
 
@@ -127,13 +165,13 @@ fastapi dev fast_zero/app.py
 - [Swagger](http://127.0.0.1:8000/docs)
 - [ReDoc](http://127.0.0.1:8000/redoc)
 
-### 5. Instalando Ferramentas Úteis para FastAPI
+### 5. Instalando Ferramentas Úteis para FastAPI 👍🏽
 
 ### 5.1 Instalar `Ruff` (Linter)
 
 Adicione `Ruff` como dependência de desenvolvimento:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry add --group dev ruff
 ```
 
@@ -167,29 +205,29 @@ quote-style = 'single'
 
 ### 5.6 Verificar o código
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 ruff check .
 ```
 
 ### 5.7 Organizar o código
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 ruff check . --fix
 ```
 
 ### 5.8 Formatar o código
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 ruff format .
 ```
 
 Quando tudo estiver correto, aparecerá a mensagem: "all checks passed!".
 
-### 6. Pytest
+### 6. Pytest 🕵🏼
 
 ### 6.1 Instalar `Pytest` (testar código)
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry add --group dev pytest pytest-cov
 ```
 
@@ -203,23 +241,23 @@ addopts = '-p no:warnings'
 
 ### 6.3 Verificar o que está ou não testado especificando o diretório
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 pytest --cov=fast_zero
 ```
 
 ### 6.4 Gerar arquivo HTML para verificar os testes
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 coverage html
 ```
 
-### 7. Taskipy
+### 7. Taskipy ↪️
 
 ### 7.1 Instalar Taskipy para lembrar de comandos
 
 Adicione essa dependência no `poetry`:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 poetry add --group dev taskipy
 ```
 
@@ -232,13 +270,13 @@ run = 'fastapi dev fast_zero/app.py'
 
 ### 7.3 Rodar um comando simples para executar o projeto
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 task run
 ```
 
 Ao invés de:
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 fastapi dev fast_zero/app.py
 ```
 
@@ -284,15 +322,15 @@ format = 'ruff check . --fix && ruff format .'
 
 ### 7.9 Ver todos os comandos task
 
-```powershell title="$ Execução no terminal!"
+```powershell title="$ Shell"
 task --list
 ```
 
-### 8. Criar um Arquivo de Testes
+### 8. Escrever Testes ✍🏼
 
 ### 8.1 Criar um arquivo no diretório `tests` com o nome abaixo:
 
-```
+```powershell title="$ Shell"
 touch test_app.py
 ```
 
