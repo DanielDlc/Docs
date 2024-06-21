@@ -129,14 +129,14 @@ Vamos observar um novo arquivo no diretório fast_zero com o nome `app.py`
 │   ├── __init__.py
 │   └── app.py
 ├── poetry.lock
-├── pyproject.toml
+├── py
 └── tests
     └── __init__.py
 </pre>
 
 ### 3.8 Editar o arquivo `app.py`
 
-```py title=" » VScode"
+```py title="¤ IDE"
 from fastapi import FastAPI
 
 app = FastAPI()
