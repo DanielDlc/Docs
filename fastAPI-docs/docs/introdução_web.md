@@ -1,4 +1,6 @@
-### 1. Utilizar localmente no terminal 👨🏽‍💻
+# Introdução ao Uso de Ferramentas Web no Terminal        
+
+## 1. Utilizar localmente no terminal 👨🏽‍💻
 
 O `httpie` é uma ferramenta de linha de comando para fazer requisições HTTP de maneira simples e intuitiva. Ele é utilizado principalmente para testar APIs e interagir com serviços web diretamente do terminal.
 
@@ -45,7 +47,7 @@ Para exibir cada elemento do Path em linhas separadas:.
 $env:Path -split ';' | ForEach-Object { $_ }
 ```
 
-### 2 Exibindo o Ip com Python 🐍
+## 2 Exibindo o Ip com Python 🐍
 
 Para exibir o IP usando Python, inicie o interpretador interativo digitando:
 
