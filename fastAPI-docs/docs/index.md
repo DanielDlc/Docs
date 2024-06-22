@@ -1,4 +1,4 @@
-# FastAPI Documentação
+# FastAPI 
 
 ## Introdução
 
@@ -6,7 +6,9 @@ Bem-vindo à documentação da nossa API desenvolvida com FastAPI! Estamos entus
 
 ## Sobre o Autor 
 
-Sou um Desenvolvedor de Software tecnicamente certificado e especializado em Desenvolvimento Web, utilizando principalmente a linguagem Python em conjunto com os frameworks Flask e Django. Atualmente, estou me especializando no framework FastAPI, que é excelente para comunicação de APIs de forma assíncrona.
+Olá a todos,
+
+Sou um Desenvolvedor de Software com certificação técnica e especialização em Desenvolvimento Web. Minha principal expertise reside no uso da linguagem Python em conjunto com o framework FastAPI, uma escolha excepcional para o desenvolvimento assíncrono de APIs.
 
 Para mais informações sobre mim, visite meus perfis no GitHub e LinkedIn
 
