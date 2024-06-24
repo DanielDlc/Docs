@@ -1,10 +1,10 @@
-# FastAPI 
+# FastAPI
 
 ## Introdução
 
 Bem-vindo à documentação da nossa API desenvolvida com FastAPI! Estamos entusiasmados em apresentar nossa API e criamos este guia para fornecer todas as informações que você precisa para utilizá-la de maneira eficiente e eficaz.
 
-## Sobre o Autor 
+## Sobre o Autor
 
 Olá a todos,
 
