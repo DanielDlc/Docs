@@ -1,12 +1,12 @@
 # Guia de Configuração do Ambiente para o Projeto
 
-## 1. Criar diretório 📂
+## 1. Criar diretório
 
 ```powershell title="$ Shell"
 mkdir fast_zero
 ```
 
-## 2. Instalar Ferramentas Necessárias 🖥️
+## 2. Instalar Ferramentas Necessárias
 
 ### 2.1 Instalar `pyenv`
 
@@ -40,7 +40,7 @@ pipx upgrade poetry
 pipx install ignr
 ```
 
-## 3. Iniciando com `poetry` 🗃️
+## 3. Iniciando com `poetry`
 
 ### 3.1 Criar um novo projeto
 
@@ -146,7 +146,7 @@ def read_root():
     return {'message': 'Olá Mundo!'}
 ```
 
-## 4. Documentação do Swagger 🌐
+## 4. Documentação do Swagger
 
 ### 4.1 Verifique se seu ambiente está ativado, caso precise ativar:
 
@@ -165,7 +165,7 @@ fastapi dev fast_zero/app.py
 - [Swagger](http://127.0.0.1:8000/docs)
 - [ReDoc](http://127.0.0.1:8000/redoc)
 
-## 5. Instalando Ferramentas Úteis para FastAPI 👍🏽
+## 5. Instalando Ferramentas Úteis para FastAPI
 
 ### 5.1 Instalar `Ruff` (Linter)
 
@@ -223,7 +223,7 @@ ruff format .
 
 Quando tudo estiver correto, aparecerá a mensagem: "all checks passed!".
 
-## 6. Pytest 🕵🏼
+## 6. Pytest
 
 ### 6.1 Instalar `Pytest` (testar código)
 
@@ -251,7 +251,7 @@ pytest --cov=fast_zero
 coverage html
 ```
 
-## 7. Taskipy ↪️
+## 7. Taskipy
 
 ### 7.1 Instalar Taskipy para lembrar de comandos
 
@@ -326,7 +326,7 @@ format = 'ruff check . --fix && ruff format .'
 task --list
 ```
 
-## 8. Escrever Testes ✍🏼
+## 8. Escrever Testes
 
 ### 8.1 Criar um arquivo no diretório `tests` com o nome abaixo:
 
