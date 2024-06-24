@@ -1,42 +1,45 @@
-site_name: "FastAPI Documentação"
-theme:
-  language: pt-BR
-  name: "material"
-  palette:
-    - scheme: default
-      primary: teal
-      toggle:
-        icon: material/weather-night
-        name: Modo noturno
-    - scheme: slate
-      primary: teal
-      toggle:
-        icon: material/weather-sunny
-        name: Modo claro
-  custom_dir: docs
-  features:
-    - content.code.copy # Habilitar o botão de cópia para blocos de código
-    - navigation.tabs # Habilita a navegação no cabeçalho
-    - navigation.top # Coloca a navegação no topo
-    - toc.integrate # Integra o conteúdo principal, movendo-o para fora da barra lateral
+  site_name: "FastAPI Documentação"
+  theme:
+    language: pt-BR
+    name: "material"
+    logo: assets/favicon.svg
+    favicon: assets/favicon.svg
+    palette:
+      - scheme: default
+        primary: teal
+        toggle:
+          icon: material/weather-night
+          name: Modo noturno
+      - scheme: slate
+        primary: teal
+        toggle:
+          icon: material/weather-sunny
+          name: Modo claro
+    custom_dir: docs
+    features:
+      - content.code.copy # Habilitar o botão de cópia para blocos de código
+      - navigation.tabs # Habilita a navegação no cabeçalho
+      - navigation.top # Coloca a navegação no topo
+      - toc.integrate # Integra o conteúdo principal, movendo-o para fora da barra lateral
 
-extra_css:
-  - "stylesheets/extra.css" # caminho para o arquivo css (ajustar width)
-markdown_extensions:
-  - pymdownx.tasklist
-  - pymdownx.emoji
-  - pymdownx.tilde
-  - pymdownx.mark
-  - pymdownx.highlight:
-      linenums: false
-  - pymdownx.superfences
+  extra_css:
+    - "stylesheets/extra.css" # caminho para o arquivo css (ajustar width)
+  markdown_extensions:
+    - pymdownx.tasklist
+    - pymdownx.emoji
+    - pymdownx.tilde
+    - pymdownx.mark
+    - pymdownx.highlight:
+        linenums: false
+    - pymdownx.superfences
+    - pymdownx.details # ocultar e exibir linha de código
 
-plugins:
-  - search
+  plugins:
+    - search
 
-nav:
-  - Home: index.md
-  - Ambiente: ambiente.md
-  - Web: introdução_web.md
-  - Crud: crud.md
-  
+  nav:
+    - Home: index.md
+    - Ambiente: ambiente.md
+    - Web: introdução_web.md
+    - Crud: crud.md
+    
